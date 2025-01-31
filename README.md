@@ -227,10 +227,11 @@ AND a.city = 'München';
 ```
 
 **📊 Result:**
-{
+```{
   formattedAddress: 'Hanssam, 456, Schleißheimer Straße, Nordhaide, Am Hart, Milbertshofen-Am Hart, München, Bayern, 80935, Deutschland',
   coordinates: { latitude: 48.2060886, longitude: 11.5644655 }
 }
+```
 
 **🛠️ Function Called:** `calculateDistance`
 
