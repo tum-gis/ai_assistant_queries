@@ -209,16 +209,30 @@ LIMIT 1;
 **🛠️ Function Called:** `getObservationsFromFrostServer`
 
 **🔍 Function Parameters:**
-```{
+```
+[
+{
   observedProperty: 'Electricity Consumption',
   buildingID: 'DEBY_LOD2_4913414',
   phenomenonTime: '2024-06-26T00:00:00Z'
-}
+},
+{
+  observedProperty: 'Electricity Consumption',
+  buildingID: 'DEBY_LOD2_4913414',
+  phenomenonTime: '2024-06-26T01:00:00Z'
+},
+{
+  observedProperty: 'Electricity Consumption',
+  buildingID: 'DEBY_LOD2_4913414',
+  phenomenonTime: '2024-06-26T02:00:00Z'
+},
+...
+]
 ```
 **📊 Result:**
 | GML ID               | Electricity Consumption of June 26,2024 |
 |----------------------|---------------------|
-| DEBY_LOD2_4913414   | 58.294                |
+| DEBY_LOD2_4913414   | 58.294               |
 
 
 [🔝 Back to the list of queries](#queries)
@@ -242,9 +256,9 @@ AND a.city = 'München';
 ```
 
 **📊 Result:**
-| GML ID              |
-|---------------------|
-| DEBY_LOD2_4913221   | 
+```
+{ gmlid: "DEBY_LOD2_4913221" }
+```
 
 **🛠️ Function Called:** `showMeTheResult`
 
