@@ -2,7 +2,7 @@
 
 ## 📖 Example of Queries <a name="queries"></a>: 
 1. [User Request: Show all buildings in Röblingweg](#query-1)
-2. [User Request: Find the building with the highest heat demand among the buildings above.](#query-2)
+2. [User Request: Find the building with the highest heat demand in January 2024 among the buildings above.](#query-2)
 3. [User Request: Show all buildings in Weyprechtstraße with more than 5 apartments](#query-3)
 4. [User Request: Find the oldest building in Weyprechtstraße](#query-4)
 5. [User Request: What was the electricity consumption of this building today, June 26, 2024?](#query-5)
@@ -65,17 +65,25 @@ SELECT DISTINCT co.gmlid
 
 ---
 
-## 🔥 User Request: Find the building with the highest heat demand among the buildings above <a name="query-2"></a>
+## 🔥 User Request: Find the building with the highest heat demand in January 2024 among the buildings above <a name="query-2"></a>
 
 **🛠️ Function Called:** `getObservationsFromFrostServer`
 
 **🔍 Function Parameters:**
 ```
+[
 {
   observedProperty: 'Heat Demand',
   buildingID: 'DEBY_LOD2_4965683',
   phenomenonTime: '2024-01-01T00:00:00Z'
-}
+},
+{
+  observedProperty: 'Heat Demand',
+  buildingID: 'DEBY_LOD2_4965796',
+  phenomenonTime: '2024-01-01T00:00:00Z'
+},
+....
+]
 ```
 This will be repeated for all the buildings.
 
