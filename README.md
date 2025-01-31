@@ -46,6 +46,20 @@ SELECT DISTINCT co.gmlid
   '{"gmlid":"DEBY_LOD2_4965858"}'
 ]
 ```
+**🛠️ Function Called:** `showMeTheResult`
+
+**🔍 Function Parameters:**
+```
+{
+  gmlids: [
+  {gmlid:"DEBY_LOD2_4965683"},
+  {gmlid:"DEBY_LOD2_4965796"},
+  {gmlid:"DEBY_LOD2_4965797"},
+  .....
+  ]
+}
+```
+
 
 [🔝 Back to the list of queries](#queries)
 
