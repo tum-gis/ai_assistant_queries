@@ -305,3 +305,89 @@ The Distance between the building and the closest restaurant is 0.19545495302809
 [🔝 Back to the list of queries](#queries)
 
 ---
+
+## 🏗️ User Request:  Which buildings on Weyprechstraße are connected to the district heating system?. <a name="query-8"></a>
+
+**🛠️ Function Called:** `runsqlquery`
+
+**🔍 Function Parameters:**
+```sql
+SELECT DISTINCT co.gmlid 
+FROM cityobject co 
+JOIN building b ON b.id = co.id 
+JOIN address_to_building ab ON b.id = ab.building_id 
+JOIN address a ON ab.address_id = a.id
+JOIN cityobject_genericattrib cga ON co.id = cga.cityobject_id
+WHERE a.street LIKE 'Weyprechtstraße%' AND cga.attrname = 'district_heating' AND cga.strval = 'connected';
+```
+
+**📊 Result:**
+```
+[
+  '{"gmlid":"DEBY_LOD2_4913206"}',
+  '{"gmlid":"DEBY_LOD2_4913208"}',
+  '{"gmlid":"DEBY_LOD2_4913209"}',
+  '{"gmlid":"DEBY_LOD2_4913221"}',
+  '{"gmlid":"DEBY_LOD2_4913222"}',
+  '{"gmlid":"DEBY_LOD2_4913223"}',
+  '{"gmlid":"DEBY_LOD2_4913224"}',
+  '{"gmlid":"DEBY_LOD2_4913228"}',
+  '{"gmlid":"DEBY_LOD2_4913230"}',
+  '{"gmlid":"DEBY_LOD2_4913231"}',
+  '{"gmlid":"DEBY_LOD2_4913232"}',
+  '{"gmlid":"DEBY_LOD2_4913233"}',
+  '{"gmlid":"DEBY_LOD2_4913234"}',
+  '{"gmlid":"DEBY_LOD2_61557"}'
+]
+```
+
+[🔝 Back to the list of queries](#queries)
+
+---
+
+## 🏗️ User Request:  What are the different usage types of these buildings?. <a name="query-9"></a>
+
+**🛠️ Function Called:** `runsqlquery`
+
+**🔍 Function Parameters:**
+```sql
+SELECT DISTINCT ga.strval AS usage_type
+FROM cityobject_genericattrib ga
+JOIN cityobject co ON ga.cityobject_id = co.id
+WHERE co.gmlid IN ('DEBY_LOD2_4913206', 'DEBY_LOD2_4913208', 'DEBY_LOD2_4913209', 'DEBY_LOD2_4913221', 'DEBY_LOD2_4913222', 'DEBY_LOD2_4913223', 'DEBY_LOD2_4913224', 'DEBY_LOD2_4913228', 'DEBY_LOD2_4913230', 'DEBY_LOD2_4913231', 'DEBY_LOD2_4913232', 'DEBY_LOD2_4913233', 'DEBY_LOD2_4913234', 'DEBY_LOD2_4913257')
+AND ga.attrname = 'building_usage';"
+```
+
+**📊 Result:**
+```
+[
+  {"usage_type":"Chruch"},
+  {"usage_type":"Residential"},
+  {"usage_type":"Residential/Industry"}
+]
+```
+
+[🔝 Back to the list of queries](#queries)
+
+---
+## 🏗️ User Request:  How many habitants are living in these buildings on average?. <a name="query-10"></a>
+
+**🛠️ Function Called:** `runsqlquery`
+
+**🔍 Function Parameters:**
+```sql
+SELECT AVG(CASE WHEN ga.datatype = 1 THEN CAST(ga.strval AS numeric)
+WHEN ga.datatype = 2 THEN ga.intval END) AS average_inhabitants
+FROM cityobject_genericattrib ga
+JOIN cityobject co
+ON ga.cityobject_id = co.id
+WHERE co.gmlid IN  ('DEBY_LOD2_4913206', 'DEBY_LOD2_4913208', 'DEBY_LOD2_4913209', 'DEBY_LOD2_4913221', 'DEBY_LOD2_4913222', 'DEBY_LOD2_4913223', 'DEBY_LOD2_4913224', 'DEBY_LOD2_4913228', 'DEBY_LOD2_4913230', 'DEBY_LOD2_4913231', 'DEBY_LOD2_4913232', 'DEBY_LOD2_4913233', 'DEBY_LOD2_4913234', 'DEBY_LOD2_4913257')
+AND ga.attrname = 'num_of_inhabitants';
+```
+
+**📊 Result:**
+```
+[{"average_inhabitants":"22.2888888888888889"}]
+```
+
+[🔝 Back to the list of queries](#queries)
