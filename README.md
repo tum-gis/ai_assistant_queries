@@ -376,8 +376,7 @@ AND ga.attrname = 'building_usage';"
 
 **🔍 Function Parameters:**
 ```sql
-SELECT AVG(CASE WHEN ga.datatype = 1 THEN CAST(ga.strval AS numeric)
-WHEN ga.datatype = 2 THEN ga.intval END) AS average_inhabitants
+SELECT AVG(CASE WHEN ga.datatype = 1 THEN CAST(ga.strval AS numeric) WHEN ga.datatype = 2 THEN ga.intval END) AS average_inhabitants
 FROM cityobject_genericattrib ga
 JOIN cityobject co
 ON ga.cityobject_id = co.id
