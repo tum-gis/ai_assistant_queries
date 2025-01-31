@@ -1,6 +1,6 @@
 # 📜 Query Log File
 
-## 📖 Example of Queries: 
+## 📖 Example of Queries (#table-of-contents): 
 1. [User Request: Show all buildings in Röblingweg](#query-1)
 2. [User Request: Find the building with the highest heat demand](#query-2)
 3. [User Request: Show all buildings in Weyprechtstraße with more than 5 apartments](#query-3)
@@ -45,7 +45,7 @@ SELECT DISTINCT co.gmlid
 | DEBY_LOD2_4965857   |
 | DEBY_LOD2_4965858   |
 
-[🔝 Back to Table of Contents](#table-of-contents)
+[🔝 Back to the list of queries](#table-of-contents)
 
 ---
 
@@ -77,7 +77,7 @@ This will be repeated for all the buildings.
 **🏆 Conclusion:**
 - The building **DEBY_LOD2_4965683** has the highest heat demand (**16,487**).
 
-[🔝 Back to Table of Contents](#table-of-contents)
+[🔝 Back to the list of queries](#table-of-contents)
 
 ---
 
@@ -125,7 +125,7 @@ AND CAST(cga.strval AS INTEGER) > 5;
 }
 ```
 
-[🔝 Back to Table of Contents](#table-of-contents)
+[🔝 Back to the list of queries](#table-of-contents)
 
 ---
 
@@ -160,7 +160,7 @@ LIMIT 1;
 ```
 {gmlids: [{ gmlid:: "DEBY_LOD2_4913414"}]}
 ```
-[🔝 Back to Table of Contents](#table-of-contents)
+[🔝 Back to the list of queries](#table-of-contents)
 
 ---
 
@@ -181,7 +181,7 @@ LIMIT 1;
 | DEBY_LOD2_4913414   | 58.294                |
 
 
-[🔝 Back to Table of Contents](#table-of-contents)
+[🔝 Back to the list of queries](#table-of-contents)
 
 ---
 
@@ -213,7 +213,7 @@ AND a.city = 'München';
 {gmlids: [{ gmlid:: "DEBY_LOD2_4913221"}]}
 ```
 
-[🔝 Back to Table of Contents](#table-of-contents)
+[🔝 Back to the list of queries](#table-of-contents)
 
 ---
 
@@ -246,6 +246,6 @@ AND a.city = 'München';
 **📊 Result:**
 The Distance between the building and the closest restaurant is 0.19545495302809132
 
-[🔝 Back to Table of Contents](#table-of-contents)
+[🔝 Back to the list of queries](#table-of-contents)
 
 ---
