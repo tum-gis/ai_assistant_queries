@@ -2,7 +2,7 @@
 
 ## 📖 Example of Queries <a name="queries"></a>: 
 1. [User Request: Show all buildings in Röblingweg](#query-1)
-2. [User Request: Find the building with the highest heat demand](#query-2)
+2. [User Request: Find the building with the highest heat demand among the buildings above.](#query-2)
 3. [User Request: Show all buildings in Weyprechtstraße with more than 5 apartments](#query-3)
 4. [User Request: Find the oldest building in Weyprechtstraße](#query-4)
 5. [User Request: What was the electricity consumption of this building today, June 26, 2024?](#query-5)
@@ -49,7 +49,7 @@ SELECT DISTINCT co.gmlid
 
 ---
 
-## 🔥 User Request: Find the building with the highest heat demand <a name="query-2"></a>
+## 🔥 User Request: Find the building with the highest heat demand among the buildings above <a name="query-2"></a>
 
 **🛠️ Function Called:** `getObservationsFromFrostServer`
 
