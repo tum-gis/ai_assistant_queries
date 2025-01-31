@@ -1,6 +1,6 @@
 # 📜 Query Log File
 
-## 📖 Example of Queries (#table-of-contents): 
+## 📖 [Example of Queries](#table-of-contents): 
 1. [User Request: Show all buildings in Röblingweg](#query-1)
 2. [User Request: Find the building with the highest heat demand](#query-2)
 3. [User Request: Show all buildings in Weyprechtstraße with more than 5 apartments](#query-3)
