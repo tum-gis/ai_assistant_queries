@@ -306,7 +306,7 @@ The Distance between the building and the closest restaurant is 0.19545495302809
 
 ---
 
-## 🏗️ User Request:  Which buildings on Weyprechstraße are connected to the district heating system?. <a name="query-8"></a>
+## 🏗️ User Request:  Which buildings on Weyprechstraße are connected to the district heating system? <a name="query-8"></a>
 
 **🛠️ Function Called:** `runsqlquery`
 
@@ -345,7 +345,7 @@ WHERE a.street LIKE 'Weyprechtstraße%' AND cga.attrname = 'district_heating' AN
 
 ---
 
-## 🏗️ User Request:  What are the different usage types of these buildings?. <a name="query-9"></a>
+## 🏗️ User Request:  What are the different usage types of these buildings? <a name="query-9"></a>
 
 **🛠️ Function Called:** `runsqlquery`
 
@@ -370,7 +370,7 @@ AND ga.attrname = 'building_usage';"
 [🔝 Back to the list of queries](#queries)
 
 ---
-## 🏗️ User Request:  How many habitants are living in these buildings on average?. <a name="query-10"></a>
+## 🏗️ User Request:  How many habitants are living in these buildings on average? <a name="query-10"></a>
 
 **🛠️ Function Called:** `runsqlquery`
 
