@@ -88,16 +88,32 @@ SELECT DISTINCT co.gmlid
 This will be repeated for all the buildings.
 
 ### 📊 Results:
-
-| Building ID           | Heat Demand (January 2024) |
-|----------------------|--------------------------|
-| DEBY_LOD2_4965683   | **16,487**               |
-| DEBY_LOD2_4965796   | 9,816                    |
-| DEBY_LOD2_4965797   | 9,896                    |
-| DEBY_LOD2_4965798   | 9,945                    |
-| DEBY_LOD2_4965799   | 8,771                    |
-| DEBY_LOD2_4965800   | 9,320                    |
-
+```
+[
+  {
+    '@iot.selfLink': 'http://frost-server:8080/FROST-Server/v1.1/Observations(3347)',
+    '@iot.id': 3347,
+    phenomenonTime: '2024-01-01T00:00:00Z',
+    resultTime: null,
+    result: 16487
+  },
+  {
+    '@iot.selfLink': 'http://frost-server:8080/FROST-Server/v1.1/Observations(2269)',
+    '@iot.id': 2269,
+    phenomenonTime: '2024-01-01T00:00:00Z',
+    resultTime: null,
+    result: 9816
+  },
+  {
+    '@iot.selfLink': 'http://frost-server:8080/FROST-Server/v1.1/Observations(2857)',
+    '@iot.id': 2857,
+    phenomenonTime: '2024-01-01T00:00:00Z',
+    resultTime: null,
+    result: 9896
+  },
+....
+]
+```
 **🏆 Conclusion:**
 - The building **DEBY_LOD2_4965683** has the highest heat demand (**16,487**).
 
