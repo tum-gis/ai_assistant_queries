@@ -29,21 +29,23 @@ SELECT DISTINCT co.gmlid
 ```
 
 **📊 Result:**
-| GML ID |
-|----------------------|
-| DEBY_LOD2_4965683   |
-| DEBY_LOD2_4965796   |
-| DEBY_LOD2_4965797   |
-| DEBY_LOD2_4965798   |
-| DEBY_LOD2_4965799   |
-| DEBY_LOD2_4965800   |
-| DEBY_LOD2_4965801   |
-| DEBY_LOD2_4965802   |
-| DEBY_LOD2_4965854   |
-| DEBY_LOD2_4965855   |
-| DEBY_LOD2_4965856   |
-| DEBY_LOD2_4965857   |
-| DEBY_LOD2_4965858   |
+```
+[
+  '{"gmlid":"DEBY_LOD2_4965683"}',
+  '{"gmlid":"DEBY_LOD2_4965796"}',
+  '{"gmlid":"DEBY_LOD2_4965797"}',
+  '{"gmlid":"DEBY_LOD2_4965798"}',
+  '{"gmlid":"DEBY_LOD2_4965799"}',
+  '{"gmlid":"DEBY_LOD2_4965800"}',
+  '{"gmlid":"DEBY_LOD2_4965801"}',
+  '{"gmlid":"DEBY_LOD2_4965802"}',
+  '{"gmlid":"DEBY_LOD2_4965854"}',
+  '{"gmlid":"DEBY_LOD2_4965855"}',
+  '{"gmlid":"DEBY_LOD2_4965856"}',
+  '{"gmlid":"DEBY_LOD2_4965857"}',
+  '{"gmlid":"DEBY_LOD2_4965858"}'
+]
+```
 
 [🔝 Back to the list of queries](#queries)
 
@@ -227,7 +229,8 @@ AND a.city = 'München';
 ```
 
 **📊 Result:**
-```{
+```
+{
   formattedAddress: 'Hanssam, 456, Schleißheimer Straße, Nordhaide, Am Hart, Milbertshofen-Am Hart, München, Bayern, 80935, Deutschland',
   coordinates: { latitude: 48.2060886, longitude: 11.5644655 }
 }
