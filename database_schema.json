@@ -1,0 +1,758 @@
+{
+    "building": {
+      "rowCount": "401",
+      "tableDescription": "This table represents buildings and their attributes in the CityGML model.",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "description": "Unique identifier for the building."
+        },
+        {
+          "column_name": "objectclass_id",
+          "data_type": "integer",
+          "description": "Identifier linking to the objectclass table, defining the type of the object."
+        },
+        {
+          "column_name": "building_parent_id",
+          "data_type": "bigint",
+          "description": "Identifier of the parent building if this building is part of a building complex."
+        },
+        {
+          "column_name": "building_root_id",
+          "data_type": "bigint",
+          "description": "Identifier of the root building in a building complex."
+        },
+        {
+          "column_name": "class",
+          "data_type": "character varying",
+          "description": "Classification of the building, e.g., residential, commercial."
+        },
+        {
+          "column_name": "class_codespace",
+          "data_type": "character varying",
+          "description": "Code space for the class attribute."
+        },
+        {
+          "column_name": "function",
+          "data_type": "character varying",
+          "description": "Function of the building, e.g., school, office."
+        },
+        {
+          "column_name": "function_codespace",
+          "data_type": "character varying",
+          "description": "Code space for the function attribute."
+        },
+        {
+          "column_name": "usage",
+          "data_type": "character varying",
+          "description": "Usage of the building, e.g., primary, secondary."
+        },
+        {
+          "column_name": "usage_codespace",
+          "data_type": "character varying",
+          "description": "Code space for the usage attribute."
+        },
+        {
+          "column_name": "year_of_construction",
+          "data_type": "date",
+          "description": "Year the building was constructed."
+        },
+        {
+          "column_name": "year_of_demolition",
+          "data_type": "date",
+          "description": "Year the building was demolished."
+        },
+        {
+          "column_name": "roof_type",
+          "data_type": "character varying",
+          "description": "Type of the roof of the building."
+        },
+        {
+          "column_name": "roof_type_codespace",
+          "data_type": "character varying",
+          "description": "Code space for the roof type attribute."
+        },
+        {
+          "column_name": "measured_height",
+          "data_type": "double precision",
+          "description": "Height of the building measured in meters."
+        },
+        {
+          "column_name": "measured_height_unit",
+          "data_type": "character varying",
+          "description": "Unit of the measured height."
+        },
+        {
+          "column_name": "storeys_above_ground",
+          "data_type": "numeric",
+          "description": "Number of storeys above ground."
+        },
+        {
+          "column_name": "storeys_below_ground",
+          "data_type": "numeric",
+          "description": "Number of storeys below ground."
+        },
+        {
+          "column_name": "storey_heights_above_ground",
+          "data_type": "character varying",
+          "description": "Heights of the storeys above ground."
+        },
+        {
+          "column_name": "storey_heights_ag_unit",
+          "data_type": "character varying",
+          "description": "Unit of the storey heights above ground."
+        },
+        {
+          "column_name": "storey_heights_below_ground",
+          "data_type": "character varying",
+          "description": "Heights of the storeys below ground."
+        },
+        {
+          "column_name": "storey_heights_bg_unit",
+          "data_type": "character varying",
+          "description": "Unit of the storey heights below ground."
+        },
+        {
+          "column_name": "lod2_terrain_intersection",
+          "data_type": "USER-DEFINED",
+          "description": "Terrain intersection curve of the building at Level of Detail 2."
+        },
+        {
+          "column_name": "lod2_multi_curve",
+          "data_type": "USER-DEFINED",
+          "description": "Multi-curve geometry of the building at Level of Detail 2."
+        },
+        {
+          "column_name": "lod2_multi_surface_id",
+          "data_type": "bigint",
+          "description": "ID of the multi-surface geometry at Level of Detail 2."
+        },
+        {
+          "column_name": "lod2_solid_id",
+          "data_type": "bigint",
+          "description": "ID of the solid geometry at Level of Detail 2."
+        }
+      ],
+      "foreignKeys": [
+        {
+          "table_name": "building",
+          "column_name": "id",
+          "foreign_table_name": "cityobject",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "building",
+          "column_name": "building_parent_id",
+          "foreign_table_name": "building",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "building",
+          "column_name": "building_root_id",
+          "foreign_table_name": "building",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "building",
+          "column_name": "lod2_multi_surface_id",
+          "foreign_table_name": "surface_geometry",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "building",
+          "column_name": "lod2_solid_id",
+          "foreign_table_name": "surface_geometry",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "building",
+          "column_name": "objectclass_id",
+          "foreign_table_name": "objectclass",
+          "foreign_column_name": "id"
+        }
+      ],
+      "primaryKeys": [
+        {
+          "column_name": "id"
+        }
+      ]
+    },
+    "cityobject_genericattrib": {
+      "rowCount": "20874",
+      "tableDescription": "This table stores all generic attributes of each cityobject in the 'attrname' column. Here you would find in the following attribute names:[{attrname: GMLID, strval}, {attrname: building_gross_floor_area, realval},{attrname: PV_state, strval}, {attrname:building_usage, strval}, {attrname: construction_type, strval}, {attrname: district_heating, strval}, {attrname:owners, strval}, {attrname: ownership_type, strval}, {attrname:refurbishment_state, strval}, {attrname: refurbishment_type, strval}, {attrname: usable_and_living_area, realval},  {attrname: usable_area, realval}, {attrname: yearly_ENEV, realval}].",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "description": "Unique identifier for the generic attribute."
+        },
+        {
+          "column_name": "parent_genattrib_id",
+          "data_type": "bigint",
+          "description": "Identifier of the parent generic attribute."
+        },
+        {
+          "column_name": "root_genattrib_id",
+          "data_type": "bigint",
+          "description": "Identifier of the root generic attribute."
+        },
+        {
+          "column_name": "attrname",
+          "data_type": "character varying",
+          "description": "Name of the generic attribute."
+        },
+        {
+          "column_name": "datatype",
+          "data_type": "integer",
+          "description": "Data type of the attribute value."
+        },
+        {
+          "column_name": "strval",
+          "data_type": "character varying",
+          "description": "String value of the attribute."
+        },
+        {
+          "column_name": "intval",
+          "data_type": "integer",
+          "description": "Integer value of the attribute."
+        },
+        {
+          "column_name": "realval",
+          "data_type": "double precision",
+          "description": "Real (double) value of the attribute."
+        },
+        {
+          "column_name": "urival",
+          "data_type": "character varying",
+          "description": "URI value of the attribute."
+        },
+        {
+          "column_name": "dateval",
+          "data_type": "timestamp with time zone",
+          "description": "Date value of the attribute."
+        },
+        {
+          "column_name": "unit",
+          "data_type": "character varying",
+          "description": "Unit of the attribute value."
+        },
+        {
+          "column_name": "genattribset_codespace",
+          "data_type": "character varying",
+          "description": "Code space for the generic attribute set."
+        },
+        {
+          "column_name": "blobval",
+          "data_type": "bytea",
+          "description": "Binary large object value of the attribute."
+        },
+        {
+          "column_name": "geomval",
+          "data_type": "USER-DEFINED",
+          "description": "Geometry value of the attribute."
+        },
+        {
+          "column_name": "surface_geometry_id",
+          "data_type": "bigint",
+          "description": "Identifier of the related surface geometry."
+        },
+        {
+          "column_name": "cityobject_id",
+          "data_type": "bigint",
+          "description": "Identifier of the related city object."
+        }
+      ],
+      "foreignKeys": [
+        {
+          "table_name": "cityobject_genericattrib",
+          "column_name": "parent_genattrib_id",
+          "foreign_table_name": "cityobject_genericattrib",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "cityobject_genericattrib",
+          "column_name": "root_genattrib_id",
+          "foreign_table_name": "cityobject_genericattrib",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "cityobject_genericattrib",
+          "column_name": "surface_geometry_id",
+          "foreign_table_name": "surface_geometry",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "cityobject_genericattrib",
+          "column_name": "cityobject_id",
+          "foreign_table_name": "cityobject",
+          "foreign_column_name": "id"
+        }
+      ],
+      "primaryKeys": [
+        {
+          "column_name": "id"
+        }
+      ]
+    },
+    "surface_geometry": {
+      "rowCount": "12335",
+      "tableDescription": "This table stores planar surface geometries for city objects.",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "description": "Unique identifier for the surface geometry."
+        },
+        {
+          "column_name": "gmlid",
+          "data_type": "character varying",
+          "description": "GML identifier for the surface geometry."
+        },
+        {
+          "column_name": "gmlid_codespace",
+          "data_type": "character varying",
+          "description": "Code space for the GML identifier."
+        },
+        {
+          "column_name": "parent_id",
+          "data_type": "bigint",
+          "description": "Identifier of the parent geometry if this is part of a composite geometry."
+        },
+        {
+          "column_name": "root_id",
+          "data_type": "bigint",
+          "description": "Identifier of the root geometry in the geometry hierarchy."
+        },
+        {
+          "column_name": "is_solid",
+          "data_type": "numeric",
+          "description": "Flag indicating if the geometry is solid (1) or not (0)."
+        },
+        {
+          "column_name": "is_composite",
+          "data_type": "numeric",
+          "description": "Flag indicating if the geometry is composite (1) or not (0)."
+        },
+        {
+          "column_name": "is_triangulated",
+          "data_type": "numeric",
+          "description": "Flag indicating if the geometry is triangulated (1) or not (0)."
+        },
+        {
+          "column_name": "is_xlink",
+          "data_type": "numeric",
+          "description": "Flag indicating if the geometry is an XLink reference (1) or not (0)."
+        },
+        {
+          "column_name": "is_reverse",
+          "data_type": "numeric",
+          "description": "Flag indicating if the geometry orientation is reversed (1) or not (0)."
+        },
+        {
+          "column_name": "solid_geometry",
+          "data_type": "USER-DEFINED",
+          "description": "Volumetric geometry of the feature if it is a solid."
+        },
+        {
+          "column_name": "geometry",
+          "data_type": "USER-DEFINED",
+          "description": "Planar polygon geometry of the feature."
+        },
+        {
+          "column_name": "implicit_geometry",
+          "data_type": "USER-DEFINED",
+          "description": "Implicit geometry of the feature."
+        },
+        {
+          "column_name": "cityobject_id",
+          "data_type": "bigint",
+          "description": "Identifier of the related city object."
+        }
+      ],
+      "foreignKeys": [
+        {
+          "table_name": "surface_geometry",
+          "column_name": "parent_id",
+          "foreign_table_name": "surface_geometry",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "surface_geometry",
+          "column_name": "root_id",
+          "foreign_table_name": "surface_geometry",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "surface_geometry",
+          "column_name": "cityobject_id",
+          "foreign_table_name": "cityobject",
+          "foreign_column_name": "id"
+        }
+      ],
+      "primaryKeys": [
+        {
+          "column_name": "id"
+        }
+      ]
+    },
+    "thematic_surface": {
+      "rowCount": "3926",
+      "tableDescription": "This table represents thematic boundary features in the CityGML model.",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "description": "Unique identifier for the thematic surface."
+        },
+        {
+          "column_name": "objectclass_id",
+          "data_type": "integer",
+          "description": "Identifier linking to the objectclass table, defining the type of the boundary surface."
+        },
+        {
+          "column_name": "building_id",
+          "data_type": "bigint",
+          "description": "Identifier of the related building."
+        },
+        {
+          "column_name": "room_id",
+          "data_type": "bigint",
+          "description": "Identifier of the related room."
+        },
+        {
+          "column_name": "building_installation_id",
+          "data_type": "bigint",
+          "description": "Identifier of the related building installation."
+        },
+        {
+          "column_name": "lod2_multi_surface_id",
+          "data_type": "bigint",
+          "description": "ID of the multi-surface geometry at Level of Detail 2."
+        },
+        {
+          "column_name": "lod3_multi_surface_id",
+          "data_type": "bigint",
+          "description": "ID of the multi-surface geometry at Level of Detail 3."
+        },
+        {
+          "column_name": "lod4_multi_surface_id",
+          "data_type": "bigint",
+          "description": "ID of the multi-surface geometry at Level of Detail 4."
+        }
+      ],
+      "foreignKeys": [
+        {
+          "table_name": "thematic_surface",
+          "column_name": "id",
+          "foreign_table_name": "cityobject",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "thematic_surface",
+          "column_name": "objectclass_id",
+          "foreign_table_name": "objectclass",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "thematic_surface",
+          "column_name": "building_id",
+          "foreign_table_name": "building",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "thematic_surface",
+          "column_name": "room_id",
+          "foreign_table_name": "room",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "thematic_surface",
+          "column_name": "building_installation_id",
+          "foreign_table_name": "building_installation",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "thematic_surface",
+          "column_name": "lod2_multi_surface_id",
+          "foreign_table_name": "surface_geometry",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "thematic_surface",
+          "column_name": "lod3_multi_surface_id",
+          "foreign_table_name": "surface_geometry",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "thematic_surface",
+          "column_name": "lod4_multi_surface_id",
+          "foreign_table_name": "surface_geometry",
+          "foreign_column_name": "id"
+        }
+      ],
+      "primaryKeys": [
+        {
+          "column_name": "id"
+        }
+      ]
+    },
+    "cityobject": {
+      "rowCount": "4327",
+      "tableDescription": "This table stores the core attributes of all city objects.",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "description": "Unique identifier for the city object."
+        },
+        {
+          "column_name": "objectclass_id",
+          "data_type": "integer",
+          "description": "Identifier linking to the objectclass table, defining the type of the city object."
+        },
+        {
+          "column_name": "gmlid",
+          "data_type": "character varying",
+          "description": "GML identifier for the city object."
+        },
+        {
+          "column_name": "gmlid_codespace",
+          "data_type": "character varying",
+          "description": "Code space for the GML identifier."
+        },
+        {
+          "column_name": "name",
+          "data_type": "character varying",
+          "description": "Name of the city object."
+        },
+        {
+          "column_name": "name_codespace",
+          "data_type": "character varying",
+          "description": "Code space for the name attribute."
+        },
+        {
+          "column_name": "description",
+          "data_type": "character varying",
+          "description": "Description of the city object."
+        },
+        {
+          "column_name": "envelope",
+          "data_type": "USER-DEFINED",
+          "description": "Bounding box of the city object."
+        },
+        {
+          "column_name": "creation_date",
+          "data_type": "timestamp with time zone",
+          "description": "Creation date of the city object."
+        },
+        {
+          "column_name": "termination_date",
+          "data_type": "timestamp with time zone",
+          "description": "Termination date of the city object."
+        },
+        {
+          "column_name": "relative_to_terrain",
+          "data_type": "character varying",
+          "description": "Relative position of the city object to the terrain."
+        },
+        {
+          "column_name": "relative_to_water",
+          "data_type": "character varying",
+          "description": "Relative position of the city object to water."
+        },
+        {
+          "column_name": "last_modification_date",
+          "data_type": "timestamp with time zone",
+          "description": "Last modification date of the city object."
+        },
+        {
+          "column_name": "updating_person",
+          "data_type": "character varying",
+          "description": "Person who last updated the city object."
+        },
+        {
+          "column_name": "reason_for_update",
+          "data_type": "character varying",
+          "description": "Reason for the last update of the city object."
+        },
+        {
+          "column_name": "lineage",
+          "data_type": "character varying",
+          "description": "Lineage information of the city object."
+        },
+        {
+          "column_name": "xml_source",
+          "data_type": "text",
+          "description": "XML source of the city object."
+        }
+      ],
+      "foreignKeys": [
+        {
+          "table_name": "cityobject",
+          "column_name": "objectclass_id",
+          "foreign_table_name": "objectclass",
+          "foreign_column_name": "id"
+        }
+      ],
+      "primaryKeys": [
+        {
+          "column_name": "id"
+        }
+      ]
+    },
+    "address": {
+      "rowCount": "312",
+      "tableDescription": "This table stores addresses associated with city objects.",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "description": "Unique identifier for the address."
+        },
+        {
+          "column_name": "gmlid",
+          "data_type": "character varying",
+          "description": "GML identifier for the address."
+        },
+        {
+          "column_name": "gmlid_codespace",
+          "data_type": "character varying",
+          "description": "Code space for the GML identifier."
+        },
+        {
+          "column_name": "street",
+          "data_type": "character varying",
+          "description": "Street name of the address."
+        },
+        {
+          "column_name": "house_number",
+          "data_type": "character varying",
+          "description": "House number of the address."
+        },
+        {
+          "column_name": "po_box",
+          "data_type": "character varying",
+          "description": "PO box of the address."
+        },
+        {
+          "column_name": "zip_code",
+          "data_type": "character varying",
+          "description": "ZIP code of the address."
+        },
+        {
+          "column_name": "city",
+          "data_type": "character varying",
+          "description": "City of the address."
+        },
+        {
+          "column_name": "state",
+          "data_type": "character varying",
+          "description": "State of the address."
+        },
+        {
+          "column_name": "country",
+          "data_type": "character varying",
+          "description": "Country of the address."
+        },
+        {
+          "column_name": "multi_point",
+          "data_type": "USER-DEFINED",
+          "description": "Multi-point geometry of the address."
+        },
+        {
+          "column_name": "xal_source",
+          "data_type": "text",
+          "description": "XAL source of the address."
+        }
+      ],
+      "foreignKeys": [],
+      "primaryKeys": [
+        {
+          "column_name": "id"
+        }
+      ]
+    },
+    "address_to_building": {
+      "rowCount": "312",
+      "tableDescription": "This table links addresses to buildings.",
+      "columns": [
+        {
+          "column_name": "building_id",
+          "data_type": "bigint",
+          "description": "Identifier of the building."
+        },
+        {
+          "column_name": "address_id",
+          "data_type": "bigint",
+          "description": "Identifier of the address."
+        }
+      ],
+      "foreignKeys": [
+        {
+          "table_name": "address_to_building",
+          "column_name": "address_id",
+          "foreign_table_name": "address",
+          "foreign_column_name": "id"
+        },
+        {
+          "table_name": "address_to_building",
+          "column_name": "building_id",
+          "foreign_table_name": "building",
+          "foreign_column_name": "id"
+        }
+      ],
+      "primaryKeys": [
+        {
+          "column_name": "building_id"
+        },
+        {
+          "column_name": "address_id"
+        }
+      ]
+    },
+    "external_reference": {
+      "rowCount": "383",
+      "tableDescription": "This table stores external references for city objects.",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "description": "Unique identifier for the external reference."
+        },
+        {
+          "column_name": "infosys",
+          "data_type": "character varying",
+          "description": "Information system identifier."
+        },
+        {
+          "column_name": "name",
+          "data_type": "character varying",
+          "description": "Name of the external reference."
+        },
+        {
+          "column_name": "uri",
+          "data_type": "character varying",
+          "description": "URI of the external reference."
+        },
+        {
+          "column_name": "cityobject_id",
+          "data_type": "bigint",
+          "description": "Identifier of the related city object."
+        }
+      ],
+      "foreignKeys": [
+        {
+          "table_name": "external_reference",
+          "column_name": "cityobject_id",
+          "foreign_table_name": "cityobject",
+          "foreign_column_name": "id"
+        }
+      ],
+      "primaryKeys": [
+        {
+          "column_name": "id"
+        }
+      ]
+    }
+  }
