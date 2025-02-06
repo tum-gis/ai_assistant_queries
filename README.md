@@ -33,6 +33,10 @@ A list of example queries can be found in [queries.md](queries.md).
 - **SensorThings API**: [SensorThings API GitHub Repository](https://github.com/opengeospatial/sensorthings)
 
 ---
+## **🌟 Results**
+![image](https://github.com/user-attachments/assets/e1b007e9-5d82-47dd-bab2-0b6e5de5b5b5)
+
+---
 
 ## 📝 **Acknowledgments**
 This work is supported by the [ASCEND](https://www.ascend-project.eu/) EU-project, in collaboration with the City of Munich.
