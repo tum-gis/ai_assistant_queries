@@ -28,7 +28,7 @@ A list of example queries can be found in [queries.md](queries.md).
 
 ---
 
-## 📚 **Key Data Sources **
+## 📚 **Key Data Sources**
 - **CityGML**: The [CityGML](https://www.ogc.org/de/publications/standard/citygml/) LOD2 model was stored in the [3DCityDB](https://github.com/3dcitydb/3dcitydb). The 3DCityDB Schema given to the LLM can be found here: [database_schema.json](database_schema.json)
 - **SensorThings API**: [SensorThings API GitHub Repository](https://github.com/opengeospatial/sensorthings)
 
