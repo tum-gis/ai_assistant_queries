@@ -46,4 +46,4 @@ This work is supported by the [ASCEND](https://www.ascend-project.eu/) EU-projec
 ## 📧 **Contact**
 For further inquiries, feel free to reach out to:
 - Khaoula Kanna: [khaoula.kanna@tum.de](mailto:khaoula.kanna@tum.de)
-- Thomas H. Kolbe: [thomas.kolbe@tum.de](mailto:thomas.kolbe@tum.de)
+- Prof. Dr. Thomas H. Kolbe: [thomas.kolbe@tum.de](mailto:thomas.kolbe@tum.de)
